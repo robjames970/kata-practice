@@ -17,22 +17,6 @@ export const parseToNumeral = (numeral: number): string => {
     return "Numeral too large!";
   }
 
-  if (numeral < 1) {
-    return "";
-  }
-
-  if (numeral === 1) {
-    return numeralsEnum.one;
-  }
-
-  if (numeral === 4) {
-    return numeralsEnum.four;
-  }
-
-  if (numeral === 9) {
-    return numeralsEnum.nine;
-  }
-
   if (numeral >= 900) {
     return `${numeralsEnum.nineHundred}${parseToNumeral(numeral - 900)}`;
   }
@@ -64,8 +48,20 @@ export const parseToNumeral = (numeral: number): string => {
     return `${numeralsEnum.ten}${parseToNumeral(numeral - 10)}`;
   }
 
+  if (numeral >= 9) {
+    return numeralsEnum.nine;
+  }
+
   if (numeral >= 5) {
     return `${numeralsEnum.five}${parseToNumeral(numeral - 5)}`;
+  }
+
+  if (numeral >= 4) {
+    return numeralsEnum.four;
+  }
+
+  if (numeral < 1) {
+    return "";
   }
 
   return `${numeralsEnum.one}${parseToNumeral(numeral - 1)}`;
