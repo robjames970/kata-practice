@@ -1,8 +1,7 @@
 name: test-workflow
 
 on: 
-  push:
-    branches: *
+  push
 
 jobs:
   build-and-test:
