@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
       
       - name: Install Dependencies
-        run: npm Install
+        run: npm install
       
       - name: Tets
         run: npm test
