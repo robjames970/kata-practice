@@ -1,0 +1,8 @@
+name: Test
+
+on:
+  push
+
+jobs:
+  test:
+    uses: src\.github\actions\test-workflow.yml
